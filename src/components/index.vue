@@ -23,7 +23,7 @@
       this.generateUUID()
       console.log(this.generateUUID())
       this.getQueryString('uid')
-      console.log(this.gunid())
+      // console.log(this.gunid())
       // alert(document.documentElement.clientHeight)
     },
     watch: {
