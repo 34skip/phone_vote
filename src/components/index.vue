@@ -3,7 +3,11 @@
     <!-- tabcontainer -->
     <!--<div>{{phoneId}}</div>-->
       <img src="../assets/1.png" alt="" class="bannerIndex" :style="{width:'100%',height:'100%'}">
-      <div @click="goVote">点击开始</div>
+      <div @click="goVote" style="">点击开始</div>
+    <div style="position: relative;width: 100%;height: 20px">
+      <img style="position: absolute;left: 0;top: 0px" src="../assets/percentWarp.png" alt="" class="bannerIndex" :style="{width:'100%',height:'100%'}">
+      <img style="position: absolute;left: 5px;top: 4px" src="../assets/percent.png" alt="" class="bannerIndex" :style="{width:'98%',height:'60%'}">
+    </div>
   </div>
 </template>
 
