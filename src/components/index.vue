@@ -1,13 +1,14 @@
 <template>
-  <div class="warp">
+  <div class="warp" :style="{width:'100%',height:height}">
     <!-- tabcontainer -->
     <!--<div>{{phoneId}}</div>-->
-      <img src="../assets/1.png" alt="" class="bannerIndex" :style="{width:'100%',height:'100%'}">
-      <div @click="goVote" style="">点击开始</div>
-    <div style="position: relative;width: 100%;height: 20px">
-      <img style="position: absolute;left: 0;top: 0px" src="../assets/percentWarp.png" alt="" class="bannerIndex" :style="{width:'100%',height:'100%'}">
-      <img style="position: absolute;left: 5px;top: 4px" src="../assets/percent.png" alt="" class="bannerIndex" :style="{width:'98%',height:'60%'}">
-    </div>
+      <!--<img src="../assets/1.png" alt="" class="bannerIndex" :style="{width:'100%',height:'100%'}">-->
+      <!--<div @click="goVote" style="">点击开始</div>-->
+    <!--<div style="position: relative;width: 100%;height: 20px">-->
+      <!--<img style="position: absolute;left: 0;top: 0px" src="../assets/percentWarp.png" alt="" class="bannerIndex" :style="{width:'100%',height:'100%'}">-->
+      <!--<img style="position: absolute;left: 5px;top: 4px" src="../assets/percent.png" alt="" class="bannerIndex" :style="{width:'98%',height:'60%'}">-->
+    <!--</div>-->
+    <img src="../assets/indexFont.png" alt="" class="fontSty" @click="goVote">
   </div>
 </template>
 
@@ -63,8 +64,19 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .warp{
-    width: 100%;
-    height: 100%;
+    /*width: 100%;*/
+    /*height: 100%;*/
+    background: url(../assets/banner.png) no-repeat center center/100% 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .fontSty{
+    width: 17%;
+    position: absolute;
+    top: 61%;
+    left: 42.5%;
   }
   .bannerIndex{
     /*width: 100%;*/

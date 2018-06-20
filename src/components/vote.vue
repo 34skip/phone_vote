@@ -1,6 +1,6 @@
 <template>
   <div class="warp" :style="{width:'100%',height:height}">
-    <div class="goBtnSty" @click="goVote">点击开始</div>
+    <!--<div class="goBtnSty" @click="goVote">点击开始</div>-->
   </div>
 </template>
 
@@ -27,7 +27,7 @@
     },
     methods: {
       goVote () {
-        this.$router.push({ path: '/vote' })
+        this.$router.push({ path: '/explain' })
       }
     }
   }
@@ -37,7 +37,7 @@
   .warp{
     /*width: 100%;*/
     /*height: 100%;*/
-    background: url(../assets/vote2.png) no-repeat center center/100% 100%;
+    background: url(../assets/vote3.png) no-repeat center center/100% 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

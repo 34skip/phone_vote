@@ -5,6 +5,7 @@ import home from '@/components/home'
 import master from '@/components/master'
 import my from '@/components/my'
 import explain from '@/components/explain'
+import vote from '@/components/vote'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/explain',
       name: 'explain',
       component: explain
+    },
+    {
+      path: '/vote',
+      name: 'vote',
+      component: vote
     }
   ]
 })
