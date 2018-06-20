@@ -51,6 +51,7 @@
     left: 50%;
     margin-left: -50px;
     font-weight: bold;
+    text-align: center;
   }
   .bannerIndex{
   }
