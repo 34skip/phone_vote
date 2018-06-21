@@ -13,6 +13,7 @@
 </template>
 
 <script>
+  import { post } from '../util/util'
   export default {
     name: 'index',
     data () {
@@ -30,6 +31,16 @@
       this.getQueryString('uid')
       // console.log(this.gunid())
       // alert(document.documentElement.clientHeight)
+      let url = 'answer/secret'
+      let path = {
+        authToken: '',
+        token: "c92114bcc9e4454f1d2b7399dc9d62a9",
+        time: '1480576266',
+        secret: '123456'
+      }
+      post(url, path, function (data) {
+        console.log(data)
+      })
     },
     watch: {
     },
