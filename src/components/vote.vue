@@ -98,6 +98,12 @@
           // if (data.data.length)
           self.Lists = data.data
         } else {
+          Toast({
+            message: data.msg,
+            position: 'center',
+            duration: 1000
+          });
+          self.$router.push({ path: '/' })
         }
       })
     },
