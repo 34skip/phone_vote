@@ -1,52 +1,52 @@
 <template>
   <div class="warp" :style="{width:'100%',height:height}">
-    <div style="width: 50%;height: 13%;position: relative;float: left;margin-top: 3%">
+    <div style="width: 50%;height: 13%;position: relative;float: left;margin-top: 3%" v-if="Lists.length > 0">
       <img class="imgwarpSty" v-if="cheakList[0].ischecked === true" src="../assets/btnActive.png" alt="" @click="btnClick(0)">
       <img class="imgwarpSty" v-else src="../assets/btnNormal.png" alt="" @click="btnClick(0)">
-      <div class="playerSty" @click="btnClick(0)">1号选手</div>
-      <div class="whereSty" @click="btnClick(0)">东区</div>
+      <div class="playerSty" @click="btnClick(0)">{{Lists.length > 0?Lists[0].name:''}}</div>
+      <div class="whereSty" @click="btnClick(0)">{{Lists.length > 0?Lists[0].area_name:''}}</div>
     </div>
-    <div style="width: 50%;height: 13%;position: relative;float: left;margin-top: 3%">
+    <div style="width: 50%;height: 13%;position: relative;float: left;margin-top: 3%" v-if="Lists.length > 1">
       <img class="imgwarpSty1" v-if="cheakList[1].ischecked === true" src="../assets/btnActive.png" alt="" @click="btnClick(1)">
       <img class="imgwarpSty1" v-else src="../assets/btnNormal.png" alt="" @click="btnClick(1)">
-      <div class="playerSty1" @click="btnClick(1)">2号选手</div>
-      <div class="whereSty1" @click="btnClick(1)">东区</div>
+      <div class="playerSty1" @click="btnClick(1)">{{Lists.length > 1?Lists[1].name:''}}</div>
+      <div class="whereSty1" @click="btnClick(1)">{{Lists.length > 1?Lists[1].area_name:''}}</div>
     </div>
-    <div style="width: 50%;height: 13%;position: relative;float: left">
+    <div style="width: 50%;height: 13%;position: relative;float: left" v-if="Lists.length > 2">
       <img class="imgwarpSty" v-if="cheakList[2].ischecked === true" src="../assets/btnActive.png" alt="" @click="btnClick(2)">
       <img class="imgwarpSty" v-else src="../assets/btnNormal.png" alt="" @click="btnClick(2)">
-      <div class="playerSty" @click="btnClick(2)">3号选手</div>
-      <div class="whereSty" @click="btnClick(2)">东区</div>
+      <div class="playerSty" @click="btnClick(2)">{{Lists.length > 2?Lists[2].name:''}}</div>
+      <div class="whereSty" @click="btnClick(2)">{{Lists.length > 2?Lists[2].area_name:''}}</div>
     </div>
-    <div style="width: 50%;height: 13%;position: relative;float: left">
+    <div style="width: 50%;height: 13%;position: relative;float: left" v-if="Lists.length > 3">
       <img class="imgwarpSty1" v-if="cheakList[3].ischecked === true" src="../assets/btnActive.png" alt="" @click="btnClick(3)">
       <img class="imgwarpSty1" v-else src="../assets/btnNormal.png" alt="" @click="btnClick(3)">
-      <div class="playerSty1" @click="btnClick(3)">4号选手</div>
-      <div class="whereSty1" @click="btnClick(3)">东区</div>
+      <div class="playerSty1" @click="btnClick(3)">{{Lists.length > 3?Lists[3].name:''}}</div>
+      <div class="whereSty1" @click="btnClick(3)">{{Lists.length > 3?Lists[3].area_name:''}}</div>
     </div>
-    <div style="width: 50%;height: 13%;position: relative;float: left">
+    <div style="width: 50%;height: 13%;position: relative;float: left" v-if="Lists.length > 4">
       <img class="imgwarpSty" v-if="cheakList[4].ischecked === true" src="../assets/btnActive.png" alt="" @click="btnClick(4)">
       <img class="imgwarpSty" v-else src="../assets/btnNormal.png" alt="" @click="btnClick(4)">
-      <div class="playerSty" @click="btnClick(4)">5号选手</div>
-      <div class="whereSty" @click="btnClick(4)">东区</div>
+      <div class="playerSty" @click="btnClick(4)">{{Lists.length > 4?Lists[4].name:''}}</div>
+      <div class="whereSty" @click="btnClick(4)">{{Lists.length > 4?Lists[4].area_name:''}}</div>
     </div>
-    <div style="width: 50%;height: 13%;position: relative;float: left">
+    <div style="width: 50%;height: 13%;position: relative;float: left" v-if="Lists.length > 5">
       <img class="imgwarpSty1" v-if="cheakList[5].ischecked === true" src="../assets/btnActive.png" alt="" @click="btnClick(5)">
       <img class="imgwarpSty1" v-else src="../assets/btnNormal.png" alt="" @click="btnClick(5)">
-      <div class="playerSty1" @click="btnClick(5)">6号选手</div>
-      <div class="whereSty1" @click="btnClick(5)">东区</div>
+      <div class="playerSty1" @click="btnClick(5)">{{Lists.length > 5?Lists[5].name:''}}</div>
+      <div class="whereSty1" @click="btnClick(5)">{{Lists.length > 5?Lists[5].area_name:''}}</div>
     </div>
-    <div style="width: 50%;height: 13%;position: relative;float: left">
+    <div style="width: 50%;height: 13%;position: relative;float: left" v-if="Lists.length > 6">
       <img class="imgwarpSty" v-if="cheakList[6].ischecked === true" src="../assets/btnActive.png" alt="" @click="btnClick(6)">
       <img class="imgwarpSty" v-else src="../assets/btnNormal.png" alt="" @click="btnClick(6)">
-      <div class="playerSty" @click="btnClick(6)">7号选手</div>
-      <div class="whereSty" @click="btnClick(6)">东区</div>
+      <div class="playerSty" @click="btnClick(6)">{{Lists.length > 6?Lists[6].name:''}}</div>
+      <div class="whereSty" @click="btnClick(6)">{{Lists.length > 6?Lists[6].area_name:''}}</div>
     </div>
-    <div style="width: 50%;height: 13%;position: relative;float: left">
+    <div style="width: 50%;height: 13%;position: relative;float: left" v-if="Lists.length > 7">
       <img class="imgwarpSty1" v-if="cheakList[7].ischecked === true" src="../assets/btnActive.png" alt="" @click="btnClick(7)">
       <img class="imgwarpSty1" v-else src="../assets/btnNormal.png" alt="" @click="btnClick(7)">
-      <div class="playerSty1" @click="btnClick(7)">8号选手</div>
-      <div class="whereSty1" @click="btnClick(7)">东区</div>
+      <div class="playerSty1" @click="btnClick(7)">{{Lists.length > 7?Lists[7].name:''}}</div>
+      <div class="whereSty1" @click="btnClick(7)">{{Lists.length > 7?Lists[7].area_name:''}}</div>
     </div>
     <img class="btnSubmit" src="../assets/btnSubmit.png" alt="" @click="submit">
   </div>
@@ -54,12 +54,22 @@
 
 <script>
   import { Toast } from 'mint-ui';
+  import { post } from '../util/util'
   export default {
     name: 'explain',
     data () {
       return {
         height: '',
         phoneId: '',
+        Lists: [],
+        Lists1: [],
+        Lists2: [],
+        Lists3: [],
+        Lists4: [],
+        Lists5: [],
+        Lists6: [],
+        Lists7: [],
+        Lists8: [],
         cheakList:[
           {ischecked: false},
           {ischecked: false},
@@ -74,13 +84,22 @@
     },
     created() {
       this.height = document.documentElement.clientHeight + 'px'
-      // this.phoneId = navigator.userAgent
-      // console.log(this.phoneId)
-      // this.generateUUID()
-      // console.log(this.generateUUID())
-      // this.getQueryString('uid')
-      // console.log(this.gunid())
-      // alert(document.documentElement.clientHeight)
+      var self = this
+      let url = 'answer/get-players'
+      let path = {
+        authToken: '',
+        token: "c92114bcc9e4454f1d2b7399dc9d62a9",
+        time: '1480576266',
+        only_id: localStorage.getItem('uid')
+      }
+      post(url, path, function (data) {
+        console.log(data)
+        if (data.status === 1) {
+          // if (data.data.length)
+          self.Lists = data.data
+        } else {
+        }
+      })
     },
     watch: {
     },
@@ -110,13 +129,35 @@
             arr.push(index + 1)
           }
         })
+        console.log(arr.slice(','))
         if (arr.length === 2) {
-          Toast({
-            message: arr,
-            position: 'center',
-            duration: 1000
-          });
-          self.$router.push({ path: '/overVote' })
+          var self = this
+          let url = 'answer/vote'
+          let path = {
+            authToken: '',
+            token: "c92114bcc9e4454f1d2b7399dc9d62a9",
+            time: '1480576266',
+            only_id: localStorage.getItem('uid'),
+            pid1: arr.slice(',')[0],
+            pid2: arr.slice(',')[1]
+          }
+          post(url, path, function (data) {
+            console.log(data)
+            if (data.status === 1) {
+              Toast({
+                message: '投票成功',
+                position: 'center',
+                duration: 1000
+              });
+              self.$router.push({ path: '/overVote' })
+            } else {
+              Toast({
+                message: data.msg,
+                position: 'center',
+                duration: 1000
+              });
+            }
+          })
         } else {
           Toast({
             message: '请选择2位选手进行投票!',
@@ -126,7 +167,22 @@
         }
       },
       goVote () {
-        this.$router.push({ path: '/explain' })
+        var self = this
+        let url = 'answer/vote'
+        let path = {
+          authToken: '',
+          token: "c92114bcc9e4454f1d2b7399dc9d62a9",
+          time: '1480576266',
+          only_id: localStorage.getItem('uid'),
+          pid1: '',
+          pid2: ''
+        }
+        post(url, path, function (data) {
+          console.log(data)
+          if (data.status === 1) {
+          } else {
+          }
+        })
       }
     }
   }

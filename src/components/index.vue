@@ -13,6 +13,7 @@
 </template>
 
 <script>
+  import { Toast } from 'mint-ui';
   import { post } from '../util/util'
   export default {
     name: 'index',
@@ -24,29 +25,40 @@
     },
     created() {
       this.height = document.documentElement.clientHeight + 'px'
-      this.phoneId = navigator.userAgent
-      console.log(this.phoneId)
-      this.generateUUID()
-      console.log(this.generateUUID())
-      this.getQueryString('uid')
+      // this.generateUUID()
+      // console.log(this.generateUUID())
+      // this.getQueryString('uid')
       // console.log(this.gunid())
-      // alert(document.documentElement.clientHeight)
-      let url = 'answer/secret'
-      let path = {
-        authToken: '',
-        token: "c92114bcc9e4454f1d2b7399dc9d62a9",
-        time: '1480576266',
-        secret: '123456'
+      // localStorage.setItem('uid', this.generateUUID())
+      console.log(localStorage.getItem('uid'))
+      if (localStorage.getItem('uid') === null) {
+        localStorage.setItem('uid', this.generateUUID())
       }
-      post(url, path, function (data) {
-        console.log(data)
-      })
     },
     watch: {
     },
     methods: {
       goVote () {
-        this.$router.push({ path: '/explain' })
+        var self = this
+        let url = 'answer/enter'
+        let path = {
+          authToken: '',
+          token: "c92114bcc9e4454f1d2b7399dc9d62a9",
+          time: '1480576266',
+          only_id: localStorage.getItem('uid')
+        }
+        post(url, path, function (data) {
+          console.log(data)
+          if (data.status === 1) {
+            self.$router.push({ path: '/explain' })
+          } else {
+            Toast({
+              message: data.msg,
+              position: 'center',
+              duration: 1000
+            });
+          }
+        })
       },
       generateUUID() {
         var d = new Date().getTime();
