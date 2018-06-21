@@ -103,6 +103,7 @@
         }
       },
       submit () {
+        var self = this
         var arr = []
         this.cheakList.forEach((item, index) => {
           if (item.ischecked === true) {
@@ -115,6 +116,7 @@
             position: 'center',
             duration: 1000
           });
+          self.$router.push({ path: '/overVote' })
         } else {
           Toast({
             message: '请选择2位选手进行投票!',
